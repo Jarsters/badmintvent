@@ -4,6 +4,7 @@ import { BACKGROUNG_COLOR, BOX_COLOR } from '../../helpers/colors';
 
 import firestore from '@react-native-firebase/firestore';
 import { LOGIN_ROUTE, OPTIONS_TAB_ROUTE } from '../../helpers/routesNames';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class AddTurnamen extends Component {
   constructor() {
@@ -36,9 +37,6 @@ class AddTurnamen extends Component {
       this.setState({
         isLoading: true,
       });
-      this.setState({
-        isLoading: false,
-      });
       // console.log(this.state);
       // alert("YEAY")
       firestore()
@@ -55,6 +53,24 @@ class AddTurnamen extends Component {
           sosmed: this.state.sosmed,
         })
         .then((res) => {
+          // console.log("RESPONSE: ", res)
+          // console.log('masuk')
+          // navigation.navigate(OPTIONS_TAB_ROUTE)
+        })
+        .then(async () => {
+          const value = await AsyncStorage.getItem('userInfo')
+          const uvalue = JSON.parse(value);
+          const email = uvalue.user.email;
+          // console.log('<<<<<<<<<<<<<<<<<<<<<<<')
+          // console.log(this.state)
+          // console.log('>>>>>>>>>>>>>>>>>>>>>>>')
+          const body = {
+            title: 'Event - ' + this.state.nama,
+            message: 'Lomba diselenggarakan oleh ' + this.state.penyelenggara + 
+                     ' di kota ' + this.state.kota + 
+                     ' untuk info lebih lengkapnya cek di aplikasimu ya!',
+            nama: email,
+          }
           this.setState({
             nama: '',
             penyelenggara: '',
@@ -67,10 +83,22 @@ class AddTurnamen extends Component {
             sosmed: '',
             isLoading: false
           });
-          // console.log("RESPONSE: ", res)
-          console.log('masuk')
+          const rawResponse = await fetch('https://fcm-server-1.herokuapp.com/send-message-topic', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+          });
+          const content = await rawResponse.json();
+
+          this.setState({
+            isLoading: false,
+          });
+
+          console.log(content);
           alert('Data berhasil ditambahkan.')
-          // navigation.navigate(OPTIONS_TAB_ROUTE)
           this.props.navigation.navigate(LOGIN_ROUTE);
         })
         .catch(err => {
@@ -138,35 +166,35 @@ class AddTurnamen extends Component {
         </View>
         <View style={styles.inputGroup}>
           <TextInput
-            placeholder={'Jadwal Pertandingan'}
+            placeholder={'Jadwal Pertandingan (contoh: 11 desember 2021 - 13 desember 2021'}
             value={this.state.name}
             onChangeText={(val) => this.inputValueUpdate(val, 'jadwal')}
           />
         </View>
         <View style={styles.inputGroup}>
           <TextInput
-            placeholder={'Jumlah Tim'}
+            placeholder={'Jumlah Tim (contoh: 32) '}
             value={this.state.name}
             onChangeText={(val) => this.inputValueUpdate(val, 'tim')}
           />
         </View>
         <View style={styles.inputGroup}>
           <TextInput
-            placeholder={'Contact Person 1'}
+            placeholder={'Contact Person 1 (contoh: 08xxxx)'}
             value={this.state.mobile}
             onChangeText={(val) => this.inputValueUpdate(val, 'cp1')}
           />
         </View>
         <View style={styles.inputGroup}>
           <TextInput
-            placeholder={'Contact Person 2'}
+            placeholder={'Contact Person 2 (contoh: 08xxxx)'}
             value={this.state.mobile}
             onChangeText={(val) => this.inputValueUpdate(val, 'cp2')}
           />
         </View>
         <View style={styles.inputGroup}>
           <TextInput
-            placeholder={'Link Sosmed Event'}
+            placeholder={'Link Sosmed Event (contoh: ig - bwf.official, atau lainnya)'}
             value={this.state.mobile}
             onChangeText={(val) => this.inputValueUpdate(val, 'sosmed')}
           />
@@ -176,6 +204,7 @@ class AddTurnamen extends Component {
             title='Tambahkan Event'
             onPress={() => this.storeUser()}
             color={BOX_COLOR}
+            disabled={this.state.isLoading}
           />
         </View>
         <View style={{ marginBottom: 100 }}></View>

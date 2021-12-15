@@ -59,11 +59,13 @@ const BoxTurnamen = ({nama_turnamen, penyelenggara, tanggal, nama_gor, kota, cp1
                     >
                         <Image
                             source={
-                                image_url ? {uri: image_url} : require('../../assets/images/1.png')
+                                image_url ? {uri: image_url} : require('../../assets/images/lapangan.jpg')
                             }
                             style={{
-                                width: 100,
-                                height: 80,
+                                // width: 100,
+                                width: "85%",
+                                // height: 80,
+                                height: "100%",
                             }}
                         />
                     </View>

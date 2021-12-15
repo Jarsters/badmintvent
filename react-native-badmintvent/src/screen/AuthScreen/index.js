@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, StatusBar, SafeAreaView, ScrollView, Button, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StatusBar, SafeAreaView, ScrollView, Button, StyleSheet, TouchableOpacity, Image } from 'react-native'
 
 import {
     GoogleSignin,
@@ -14,7 +14,7 @@ import { BACKGROUNG_COLOR, BOX_COLOR, TEXT1, TEXT2 } from '../../helpers/colors'
 import { ADD_ROUTE } from '../../helpers/routesNames';
 
 
-const AuthScreen = ({navigation}) => {
+const AuthScreen = ({ navigation }) => {
 
     const [loggedIn, setloggedIn] = useState(false);
     const [userInfo, setuserInfo] = useState(null);
@@ -91,7 +91,7 @@ const AuthScreen = ({navigation}) => {
 
     const getTokensDevice = async () => {
         const value = await AsyncStorage.getItem('token')
-        if(value) { console.log(value) }
+        if (value) { console.log(value) }
         return null;
     }
 
@@ -101,8 +101,15 @@ const AuthScreen = ({navigation}) => {
     };
 
     return (
-        <>
+        <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
             <View style={styles.body}>
+                <Image
+                    source={require('../../assets/images/logo.png')}
+                    style={{
+                        width: 150,
+                        height: 150
+                    }}
+                />
                 <View style={styles.sectionContainer}>
                     {!userInfo && <GoogleSigninButton
                         style={{ width: 192, height: 48 }}
@@ -128,14 +135,16 @@ const AuthScreen = ({navigation}) => {
                                         width: 150,
                                         height: 60,
                                         backgroundColor: BOX_COLOR,
-                                        justifyContent:'center',
+                                        justifyContent: 'center',
                                         borderRadius: 50
                                     }}
                                     onPress={() => {
-                                        navigation.navigate(ADD_ROUTE)
+                                        navigation.navigate(ADD_ROUTE, {
+                                            userInfo: userInfo
+                                        })
                                     }}
                                 >
-                                    <Text style={{ textAlign:'center', color: 'white', fontWeight: '700'}}>Buat Event</Text>
+                                    <Text style={{ textAlign: 'center', color: 'white', fontWeight: '700' }}>Buat Event</Text>
                                 </TouchableOpacity>
 
                             </View>
@@ -145,7 +154,7 @@ const AuthScreen = ({navigation}) => {
                     }
                 </View>
             </View>
-        </>
+        </ScrollView>
     );
 }
 

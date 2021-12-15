@@ -33,12 +33,14 @@ const BoxDetail = ({image, nama, penyelenggara, tanggal, gor, kota, cp1, cp2, ti
 
                 <Image
                     source={
-                        image ? { uri: image } : require('../../assets/images/1.png')
+                        image ? { uri: image } : require('../../assets/images/shuttlecock.jpg')
                     }
                     style={{
                         marginVertical: 10,
-                        width: 100,
-                        height: 80,
+                        // width: 100,
+                        width: "75%",
+                        height: 180,
+                        // height: "20%",
                         alignSelf:'center'
                     }}
                 />

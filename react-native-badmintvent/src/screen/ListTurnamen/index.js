@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList, ScrollView, TouchableOpacity, RefreshControl } from 'react-native'
+import { View, FlatList, RefreshControl } from 'react-native'
 import BoxTurnamen from '../../components/BoxTurnamen'
 import { BACKGROUNG_COLOR, TEXT } from '../../helpers/colors'
-import { DETAIL_ROUTE } from '../../helpers/routesNames'
 
 import firestore from '@react-native-firebase/firestore';
 import SplashScreen from 'react-native-splash-screen';
@@ -23,86 +22,6 @@ warna:
     4. #FF426D - Text in Box
 */
 
-// const listTurnamen = [
-//     {
-//         'nama': 'dekan cup fmipa unj',
-//         'penyelenggara': 'fmipa',
-//         'status': 'tutup',
-//         'gor': 'gor spirit',
-//         'kota': 'jakarta timur',
-//         'tanggal': '11 desember 2021 - 12 desember 2021',
-//         'cp1': '08xxxxxxxxxxxx',
-//         'cp2': '08xxxxxxxxxxxx',
-//         'tim': '20',
-//         'sosmed': 'https://instagram.com/rezas_esa',
-//         'image_url': '',
-//     },
-//     {
-//         'nama': 'dekan cup fmipa unj 2',
-//         'penyelenggara': 'fmipa',
-//         'status': 'tutup',
-//         'gor': 'gor serbaguna',
-//         'kota': 'jakarta timur',
-//         'tanggal': '21 desember 2021 - 22 desember 2021',
-//         'cp1': '08xxxxxxxxxxxx',
-//         'cp2': '08xxxxxxxxxxxx',
-//         'tim': '20',
-//         'sosmed': 'https://instagram.com/rezas_esa',
-//         'image_url': '',
-//     },
-//     {
-//         'nama': 'dekan cup fmipa unj 3',
-//         'penyelenggara': 'fmipa',
-//         'status': 'buka',
-//         'gor': 'gor kinasih',
-//         'kota': 'jakarta timur',
-//         'tanggal': '19 desember 2021 - 20 desember 2021',
-//         'cp1': '08xxxxxxxxxxxx',
-//         'cp2': '08xxxxxxxxxxxx',
-//         'tim': '20',
-//         'sosmed': 'https://instagram.com/rezas_esa',
-//         'image_url': '',
-//     },
-//     {
-//         'nama': 'pb djarum cup',
-//         'penyelenggara': 'pb djarum',
-//         'status': 'buka',
-//         'gor': 'gor lamahu',
-//         'kota': 'jakarta timur',
-//         'tanggal': '17 desember 2021 - 18 desember 2021',
-//         'cp1': '08xxxxxxxxxxxx',
-//         'cp2': '08xxxxxxxxxxxx',
-//         'tim': '20',
-//         'sosmed': 'https://instagram.com/rezas_esa',
-//         'image_url': '',
-//     },
-//     {
-//         'nama': 'pb djarum cup 2',
-//         'penyelenggara': 'pb djarum',
-//         'status': 'buka',
-//         'gor': 'gor lamahu',
-//         'kota': 'jakarta timur',
-//         'tanggal': '15 desember 2021 - 16 desember 2021',
-//         'cp1': '08xxxxxxxxxxxx',
-//         'cp2': '08xxxxxxxxxxxx',
-//         'tim': '20',
-//         'sosmed': 'https://instagram.com/rezas_esa',
-//         'image_url': '',
-//     },
-//     {
-//         'nama': 'pb djarum cup 3',
-//         'penyelenggara': 'pb djarum',
-//         'status': 'buka',
-//         'gor': 'gor lamahu',
-//         'kota': 'jakarta timur', 'tanggal': '13 desember 2021 - 14 desember 2021',
-//         'cp1': '08xxxxxxxxxxxx',
-//         'cp2': '08xxxxxxxxxxxx',
-//         'tim': '20',
-//         'sosmed': 'https://instagram.com/rezas_esa',
-//         'image_url': '',
-//     },
-// ]
-
 const ListTurnamen = ({ navigation }) => {
     const [state, setState] = useState(null);
 
@@ -119,7 +38,7 @@ const ListTurnamen = ({ navigation }) => {
                 });
             });
         setListTurnamen(turnamen);
-        if (turnamen) { console.log(turnamen) }
+        // if (turnamen) { console.log(turnamen) }
     }
 
     // get data once when application running
@@ -129,14 +48,16 @@ const ListTurnamen = ({ navigation }) => {
 
     const [listTurnamen, setListTurnamen] = useState(null);
 
+    // for hiding SplashScreen when open an application
     useEffect(() => {
-        // getData()
         changeState();
         if (state) {
             SplashScreen.hide();
         };
     }, [state])
 
+
+    // for refreshing data
     const [Refreshing, setRefreshing] = useState(false)
     const onRefreshing = () => {
         setRefreshing(true);
@@ -165,7 +86,7 @@ const ListTurnamen = ({ navigation }) => {
                                 cp1={item.cp1.toUpperCase()}
                                 cp2={item.cp2.toUpperCase()}
                                 tim={item.tim}
-                                sosmed={item.sosmed}
+                                sosmed={item.sosmed.toUpperCase()}
                                 // image_url={item.image_url}
                                 navigation={navigation}
                             />
