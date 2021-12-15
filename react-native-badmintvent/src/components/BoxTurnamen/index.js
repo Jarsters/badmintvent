@@ -8,7 +8,7 @@ import {
 import { BOX_COLOR } from '../../helpers/colors';
 import { DETAIL_ROUTE } from '../../helpers/routesNames';
 
-const BoxTurnamen = ({nama_turnamen, penyelenggara, status, tanggal, nama_gor, kota, cp1, cp2, tim, sosmed, image_url, navigation}) => {
+const BoxTurnamen = ({nama_turnamen, penyelenggara, tanggal, nama_gor, kota, cp1, cp2, tim, sosmed, image_url, navigation}) => {
     const data = {
         nama:nama_turnamen,
         penyelenggara:penyelenggara,
@@ -16,7 +16,6 @@ const BoxTurnamen = ({nama_turnamen, penyelenggara, status, tanggal, nama_gor, k
         cp1:cp1,
         cp2:cp2,
         tim:tim,
-        status:status,
         gor:nama_gor,
         kota:kota,
         sosmed:sosmed,
@@ -77,7 +76,7 @@ const BoxTurnamen = ({nama_turnamen, penyelenggara, status, tanggal, nama_gor, k
                     >
                         <Text style={{ marginBottom: 5, paddingTop: 5, fontWeight: 'bold' }}>{nama_turnamen ? nama_turnamen : 'NAMA TURNAMEN'}</Text>
                         <Text style={{ marginBottom: 5, }}>{penyelenggara ? penyelenggara : 'PENYELENGGARA'}</Text>
-                        <Text style={{ color: (status=='BUKA') ? 'yellow' : 'black', fontWeight: '700' }}>{status ? status : 'STATUS'}</Text>
+                        <Text style={{ color: (tanggal=='BUKA') ? 'yellow' : 'black', fontWeight: '700' }}>{tanggal ? tanggal : 'TANGGAL'}</Text>
                     </View>
                 </View>
                 {/* Nama Lokasi */}

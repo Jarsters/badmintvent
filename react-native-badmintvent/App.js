@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Image,
   SafeAreaView,
@@ -47,6 +47,10 @@ import ListTurnamen from './src/screen/ListTurnamen';
 
 import PushNotification from "react-native-push-notification";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import SplashScreen from "react-native-splash-screen";
+
+
+
 
 const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -73,6 +77,9 @@ const Section = ({ children, title }) => {
     </View>
   );
 };
+
+
+
 
 // Must be outside of any component LifeCycle (such as `componentDidMount`).
 PushNotification.configure({
@@ -130,8 +137,8 @@ PushNotification.configure({
 PushNotification.subscribeToTopic('badminton');
 
 
-
 const App = () => {
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
