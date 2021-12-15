@@ -8,6 +8,8 @@ import AddTurnamen from '../screen/AddTurnamen';
 import { BACKGROUNG_COLOR } from '../helpers/colors';
 import Auth from '../screen/AuthScreen';
 
+
+
 const OptionsNavigators = () => {
     const OptionsStack = createNativeStackNavigator();
     return (

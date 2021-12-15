@@ -89,8 +89,10 @@ const AuthScreen = ({navigation}) => {
         }
     };
 
-    const getTokens = async () => {
-        alert('ini tokens!')
+    const getTokensDevice = async () => {
+        const value = await AsyncStorage.getItem('token')
+        if(value) { console.log(value) }
+        return null;
     }
 
     const getCurrentUser = async () => {

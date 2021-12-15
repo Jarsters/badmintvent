@@ -3,6 +3,7 @@ import { Button, StyleSheet, TextInput, ScrollView, ActivityIndicator, View, Tex
 import { BACKGROUNG_COLOR, BOX_COLOR } from '../../helpers/colors';
 
 import firestore from '@react-native-firebase/firestore';
+import { LOGIN_ROUTE, OPTIONS_TAB_ROUTE } from '../../helpers/routesNames';
 
 class AddTurnamen extends Component {
   constructor() {
@@ -66,8 +67,11 @@ class AddTurnamen extends Component {
             sosmed: '',
             isLoading: false
           });
-          console.log("RESPONSE: ", res)
+          // console.log("RESPONSE: ", res)
           console.log('masuk')
+          alert('Data berhasil ditambahkan.')
+          // navigation.navigate(OPTIONS_TAB_ROUTE)
+          this.props.navigation.navigate(LOGIN_ROUTE);
         })
         .catch(err => {
           console.log("Error found: ", err);
