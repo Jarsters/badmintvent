@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1071472602823",
+    "project_id": "badmintvent",
+    "storage_bucket": "badmintvent.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071472602823:android:a87dfa2e164472a300d8e2",
+        "android_client_info": {
+          "package_name": "com.olahraga.badmintvent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071472602823-2p4aumeafoidmranarc8cbt0po49k58h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.olahraga.badmintvent",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1071472602823-fpgiqg4ird2v79b44ibttvpd9ie113io.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJV_bqlfRMr2oZc9RomPlyiMo21faxzYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071472602823-fpgiqg4ird2v79b44ibttvpd9ie113io.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
