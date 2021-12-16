@@ -84,7 +84,7 @@ const BoxTurnamen = ({nama_turnamen, penyelenggara, tanggal, nama_gor, kota, cp1
                 {/* Nama Lokasi */}
                 <View
                     style={{
-                        paddingLeft: 25,
+                        paddingLeft: "4%",
                         paddingBottom: 10
                     }}
                 >

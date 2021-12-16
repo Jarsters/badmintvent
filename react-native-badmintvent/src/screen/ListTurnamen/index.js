@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { View, FlatList, RefreshControl } from 'react-native'
+import { View, FlatList, RefreshControl, Text, ScrollView } from 'react-native'
 import BoxTurnamen from '../../components/BoxTurnamen'
 import { BACKGROUNG_COLOR, TEXT } from '../../helpers/colors'
 
 import firestore from '@react-native-firebase/firestore';
 import SplashScreen from 'react-native-splash-screen';
+import Icon from '../../components/Icon';
 
 /*
 <BoxTurnamen 
@@ -38,11 +39,12 @@ const ListTurnamen = ({ navigation }) => {
                 });
             });
         setListTurnamen(turnamen);
+        if (turnamen.length === 0) { setListTurnamen(null) }
         // if (turnamen) { console.log(turnamen) }
     }
 
     // get data once when application running
-    useEffect(()=>{
+    useEffect(() => {
         getData()
     }, [])
 
@@ -67,40 +69,56 @@ const ListTurnamen = ({ navigation }) => {
 
     return (
         <View
-            style={{ backgroundColor: BACKGROUNG_COLOR }}
+            style={{ backgroundColor: BACKGROUNG_COLOR, flex: 1 }}
         >
-
-            <FlatList
-                keyExtractor={(item, index) => index.toString()}
-                data={listTurnamen}
-                renderItem={({ item, index }) => {
-                    return (
-                        // nama_turnamen, penyelenggara, status, tanggal, nama_gor, kota, cp1, cp2, tim, sosmed, image_url,?
-                        <View>
-                            <BoxTurnamen
-                                nama_turnamen={item.nama.toUpperCase()}
-                                penyelenggara={item.penyelenggara.toUpperCase()}
-                                tanggal={item.jadwal.toUpperCase()}
-                                nama_gor={item.gor.toUpperCase()}
-                                kota={item.kota.toUpperCase()}
-                                cp1={item.cp1.toUpperCase()}
-                                cp2={item.cp2.toUpperCase()}
-                                tim={item.tim}
-                                sosmed={item.sosmed.toUpperCase()}
-                                // image_url={item.image_url}
-                                navigation={navigation}
-                            />
-                        </View>
-                    )
-                }}
-                refreshControl={
-                    <RefreshControl
-                        refreshing={Refreshing}
-                        onRefresh={onRefreshing}
-                        colors={['#02A799']}
-                    />
-                }
-            />
+            {listTurnamen ? (
+                <FlatList
+                    keyExtractor={(item, index) => index.toString()}
+                    data={listTurnamen}
+                    renderItem={({ item, index }) => {
+                        return (
+                            // nama_turnamen, penyelenggara, status, tanggal, nama_gor, kota, cp1, cp2, tim, sosmed, image_url,?
+                            <View>
+                                <BoxTurnamen
+                                    nama_turnamen={item.nama.toUpperCase()}
+                                    penyelenggara={item.penyelenggara.toUpperCase()}
+                                    tanggal={item.jadwal.toUpperCase()}
+                                    nama_gor={item.gor.toUpperCase()}
+                                    kota={item.kota.toUpperCase()}
+                                    cp1={item.cp1.toUpperCase()}
+                                    cp2={item.cp2.toUpperCase()}
+                                    tim={item.tim}
+                                    sosmed={item.sosmed.toUpperCase()}
+                                    // image_url={item.image_url}
+                                    navigation={navigation}
+                                />
+                            </View>
+                        )
+                    }}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={Refreshing}
+                            onRefresh={onRefreshing}
+                            colors={['#02A799']}
+                        />
+                    }
+                />) : (
+                <ScrollView
+                    contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={Refreshing}
+                            onRefresh={onRefreshing}
+                            colors={['#02A799']}
+                        />
+                    }
+                >
+                    <Text style={{ textAlign: 'center', fontSize: 25 }} color={"#000"}>
+                        <Icon type={"fa5"} name={"folder-minus"} size={25} color={"#000"} />
+                        Data tidak ditemukan!
+                    </Text>
+                </ScrollView>
+            )}
         </View>
     )
 }

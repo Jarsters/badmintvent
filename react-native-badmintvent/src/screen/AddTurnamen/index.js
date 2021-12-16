@@ -3,7 +3,7 @@ import { Button, StyleSheet, TextInput, ScrollView, ActivityIndicator, View, Tex
 import { BACKGROUNG_COLOR, BOX_COLOR } from '../../helpers/colors';
 
 import firestore from '@react-native-firebase/firestore';
-import { LOGIN_ROUTE, OPTIONS_TAB_ROUTE } from '../../helpers/routesNames';
+import { LOGIN_ROUTE } from '../../helpers/routesNames';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class AddTurnamen extends Component {
@@ -65,9 +65,9 @@ class AddTurnamen extends Component {
           // console.log(this.state)
           // console.log('>>>>>>>>>>>>>>>>>>>>>>>')
           const body = {
-            title: 'Event - ' + this.state.nama,
-            message: 'Lomba diselenggarakan oleh ' + this.state.penyelenggara + 
-                     ' di kota ' + this.state.kota + 
+            title: 'Event - ' + this.state.nama.toUpperCase(),
+            message: 'Lomba diselenggarakan oleh ' + this.state.penyelenggara.toUpperCase() + 
+                     ' di kota ' + this.state.kota.toUpperCase() + 
                      ' untuk info lebih lengkapnya cek di aplikasimu ya!',
             nama: email,
           }
@@ -81,7 +81,6 @@ class AddTurnamen extends Component {
             cp1: '',
             cp2: '',
             sosmed: '',
-            isLoading: false
           });
           const rawResponse = await fetch('https://fcm-server-1.herokuapp.com/send-message-topic', {
             method: 'POST',
@@ -97,7 +96,7 @@ class AddTurnamen extends Component {
             isLoading: false,
           });
 
-          console.log(content);
+          // console.log(content);
           alert('Data berhasil ditambahkan.')
           this.props.navigation.navigate(LOGIN_ROUTE);
         })
@@ -129,8 +128,8 @@ class AddTurnamen extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={styles.preloader}>
-          <ActivityIndicator size="large" color="#9E9E9E" />
+        <View style={[styles.preloader, {backgroundColor:BACKGROUNG_COLOR}]}>
+          <ActivityIndicator size="large" color={BOX_COLOR} />
         </View>
       )
     }

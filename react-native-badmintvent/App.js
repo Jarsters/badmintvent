@@ -85,7 +85,7 @@ const Section = ({ children, title }) => {
 PushNotification.configure({
   // (optional) Called when Token is generated (iOS and Android)
   onRegister: async function (token) {
-    console.log("TOKEN:", token);
+    // console.log("TOKEN:", token);
     await AsyncStorage.setItem('token', JSON.stringify(token));
   },
 
