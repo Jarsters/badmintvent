@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, StatusBar, SafeAreaView, ScrollView, Button, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, ScrollView, Button, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from 'react-native'
 
 import {
     GoogleSignin,
     GoogleSigninButton,
     statusCodes,
 } from '@react-native-google-signin/google-signin';
-import { Header } from 'react-native/Libraries/NewAppScreen';
 
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -18,6 +17,7 @@ const AuthScreen = ({ navigation }) => {
 
     const [loggedIn, setloggedIn] = useState(false);
     const [userInfo, setuserInfo] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     GoogleSignin.configure({
         webClientId: 'firebase-adminsdk-1gwc0@badmintvent.iam.gserviceaccount.com'
@@ -28,6 +28,7 @@ const AuthScreen = ({ navigation }) => {
     }, [userInfo]);
 
     const signIn = async () => {
+        setIsLoading(true);
         try {
             await GoogleSignin.hasPlayServices();
             const userInfo = await GoogleSignin.signIn();
@@ -41,6 +42,7 @@ const AuthScreen = ({ navigation }) => {
             setloggedIn(true);
             const jsonValue = JSON.stringify(userInfo);
             await AsyncStorage.setItem('userInfo', jsonValue)
+            setIsLoading(false);
         } catch (error) {
             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
                 // user cancelled the login flow
@@ -74,6 +76,7 @@ const AuthScreen = ({ navigation }) => {
     }
 
     const signOut = async () => {
+        setIsLoading(true);
         try {
             await GoogleSignin.revokeAccess();
             await GoogleSignin.signOut();
@@ -83,6 +86,7 @@ const AuthScreen = ({ navigation }) => {
             setloggedIn(false);
             await AsyncStorage.removeItem('userInfo');
             setuserInfo(null);
+            setIsLoading(false);
             // await AsyncStorage.removeItem('userInfo');
         } catch (error) {
             console.error(error);
@@ -97,9 +101,16 @@ const AuthScreen = ({ navigation }) => {
 
     const getCurrentUser = async () => {
         const currentUser = await GoogleSignin.getCurrentUser();
-        console.log(currentUser);
+        // console.log(currentUser);
     };
 
+    if (isLoading) {
+        return (
+            <View style={[styles.preloader, { backgroundColor: BACKGROUNG_COLOR }]}>
+                <ActivityIndicator size="large" color={BOX_COLOR} />
+            </View>
+        )
+    }
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
             <View style={styles.body}>
@@ -180,6 +191,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1
+    },
+    preloader: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        position: 'absolute',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });
 

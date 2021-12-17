@@ -8,7 +8,7 @@ import {
 import { BOX_COLOR } from '../../helpers/colors';
 import { DETAIL_ROUTE } from '../../helpers/routesNames';
 
-const BoxTurnamen = ({nama_turnamen, penyelenggara, tanggal, nama_gor, kota, cp1, cp2, tim, sosmed, image_url, navigation}) => {
+const BoxTurnamen = ({nama_turnamen, penyelenggara, tanggal, nama_gor, kota, cp1, cp2, tim, sosmed, image_url, posted_by, posted_at, navigation}) => {
     const data = {
         nama:nama_turnamen,
         penyelenggara:penyelenggara,
@@ -19,7 +19,9 @@ const BoxTurnamen = ({nama_turnamen, penyelenggara, tanggal, nama_gor, kota, cp1
         gor:nama_gor,
         kota:kota,
         sosmed:sosmed,
-        image_url:image_url
+        image_url:image_url,
+        posted_by:posted_by,
+        posted_at:posted_at
     }
     return (
         // Box Turnamen

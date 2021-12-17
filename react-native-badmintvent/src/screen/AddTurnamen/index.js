@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, TextInput, ScrollView, ActivityIndicator, View, Text } from 'react-native';
+import { Button, StyleSheet, TextInput, ScrollView, ActivityIndicator, View } from 'react-native';
 import { BACKGROUNG_COLOR, BOX_COLOR } from '../../helpers/colors';
 
 import firestore from '@react-native-firebase/firestore';
@@ -9,7 +9,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 class AddTurnamen extends Component {
   constructor() {
     super();
-    // this.dbRef = firebase.firestore().collection('users');
+    const d = new Date(Date.now());
+    const day = d.toLocaleDateString();
     this.state = {
       nama: '',
       penyelenggara: '',
@@ -20,8 +21,19 @@ class AddTurnamen extends Component {
       cp1: '',
       cp2: '',
       sosmed: '',
+      posted_by: '',
+      posted_at: day,
       isLoading: false
     };
+    const getEmail = async () => {
+      const value = await AsyncStorage.getItem('userInfo')
+      const uvalue = JSON.parse(value);
+      const email = uvalue.user.email;
+      this.setState({
+        posted_by: email,
+      })
+    }
+    getEmail();
   }
 
   inputValueUpdate = (val, prop) => {
@@ -30,15 +42,56 @@ class AddTurnamen extends Component {
     this.setState(state);
   }
 
+  helpTgl(v, tgl, thn){
+    if(isNaN(v) || isNaN(thn)) { return true }
+    if(thn % 4 === 0 && tgl == "28" ) { tgl = "29" }
+    if(0 < v && v <= tgl) { return false }
+    return true;
+  }
+
+  inValidateDay(hday) {
+    if(hday === '') { return true }
+    const date = hday.toUpperCase()
+    const tgl = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    const month = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER']
+    const date_split = date.split(' ')
+    const m1 = month.indexOf(date_split[1])
+    const m2 =  month.indexOf(date_split[5])
+    // cek panjang
+    if(date_split.length !== 7) { return true }
+    // cek bulan
+    if( m1 < 0 || m2 < 0) { return true }
+    // cek tanggal dan juga cek jika tanggal memuat string dan juga mengecek jika tahun bukan angka
+    if( this.helpTgl(date_split[0], tgl[m1], date_split[2]) || this.helpTgl(date_split[4], tgl[m2], date_split[6]) ) { return true }
+    return false;
+  }
+
   storeUser() {
     if (this.state.nama === '') {
-      alert('Fill at least your name!')
-    } else {
+      alert('MASUKKAN NAMA EVENT')
+    } 
+    else if (this.state.penyelenggara === ''){
+      alert('MASUKKAN NAMA PENYELENGGARA')
+    }
+    else if (this.state.gor === ''){
+      alert('MASUKKAN NAMA GOR')
+    }
+    else if (this.state.kota === ''){
+      alert('MASUKKAN NAMA KOTA GOR')
+    }
+    else if (this.inValidateDay(this.state.jadwal)){
+      alert('FORMAT JADWAL\n11 DESEMBER 2021 - 12 DESEMBER 2021')
+    }
+    else if (this.state.tim === '' || isNaN(this.state.tim)) {
+      alert('MASUKKAN TOTAL TIM (CONTOH : 64)')
+    }
+    else if (this.state.cp1 === '' || this.state.cp2 === '' || isNaN(this.state.cp1) || isNaN(this.state.cp2)){
+      alert('MASUKKAN NOMOR TELEPON CONTACT PERSON DENGAN BENAR')
+    }
+    else {
       this.setState({
         isLoading: true,
       });
-      // console.log(this.state);
-      // alert("YEAY")
       firestore()
         .collection('events')
         .add({
@@ -51,24 +104,20 @@ class AddTurnamen extends Component {
           cp1: this.state.cp1,
           cp2: this.state.cp2,
           sosmed: this.state.sosmed,
+          posted_by: this.state.posted_by,
+          posted_at: this.state.posted_at
         })
         .then((res) => {
-          // console.log("RESPONSE: ", res)
-          // console.log('masuk')
-          // navigation.navigate(OPTIONS_TAB_ROUTE)
         })
         .then(async () => {
           const value = await AsyncStorage.getItem('userInfo')
           const uvalue = JSON.parse(value);
           const email = uvalue.user.email;
-          // console.log('<<<<<<<<<<<<<<<<<<<<<<<')
-          // console.log(this.state)
-          // console.log('>>>>>>>>>>>>>>>>>>>>>>>')
           const body = {
             title: 'Event - ' + this.state.nama.toUpperCase(),
-            message: 'Lomba diselenggarakan oleh ' + this.state.penyelenggara.toUpperCase() + 
-                     ' di kota ' + this.state.kota.toUpperCase() + 
-                     ' untuk info lebih lengkapnya cek di aplikasimu ya!',
+            message: 'Lomba diselenggarakan oleh ' + this.state.penyelenggara.toUpperCase() +
+              ' di kota ' + this.state.kota.toUpperCase() +
+              ' untuk info lebih lengkapnya cek di aplikasimu ya!',
             nama: email,
           }
           this.setState({
@@ -103,32 +152,13 @@ class AddTurnamen extends Component {
         .catch(err => {
           console.log("Error found: ", err);
         })
-      //   this.dbRef.add({
-      //     name: this.state.name,
-      //     email: this.state.email,
-      //     mobile: this.state.mobile,
-      //   }).then((res) => {
-      //     this.setState({
-      //       name: '',
-      //       email: '',
-      //       mobile: '',
-      //       isLoading: false,
-      //     });
-      //     this.props.navigation.navigate('UserScreen')
-      //   })
-      //   .catch((err) => {
-      //     console.error("Error found: ", err);
-      //     this.setState({
-      //       isLoading: false,
-      //     });
-      //   });
     }
   }
 
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={[styles.preloader, {backgroundColor:BACKGROUNG_COLOR}]}>
+        <View style={[styles.preloader, { backgroundColor: BACKGROUNG_COLOR }]}>
           <ActivityIndicator size="large" color={BOX_COLOR} />
         </View>
       )
@@ -151,14 +181,14 @@ class AddTurnamen extends Component {
         </View>
         <View style={styles.inputGroup}>
           <TextInput
-            placeholder={'Nama Gor'}
+            placeholder={'Nama Gor (contoh: spirit)'}
             value={this.state.name}
             onChangeText={(val) => this.inputValueUpdate(val, 'gor')}
           />
         </View>
         <View style={styles.inputGroup}>
           <TextInput
-            placeholder={'Kota Gor'}
+            placeholder={'Kota Gor (contoh: jakarta timur)'}
             value={this.state.name}
             onChangeText={(val) => this.inputValueUpdate(val, 'kota')}
           />

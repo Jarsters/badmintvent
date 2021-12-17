@@ -1,27 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { View, FlatList, RefreshControl, Text, ScrollView } from 'react-native'
 import BoxTurnamen from '../../components/BoxTurnamen'
-import { BACKGROUNG_COLOR, TEXT } from '../../helpers/colors'
+import { BACKGROUNG_COLOR } from '../../helpers/colors'
 
 import firestore from '@react-native-firebase/firestore';
 import SplashScreen from 'react-native-splash-screen';
 import Icon from '../../components/Icon';
-
-/*
-<BoxTurnamen 
-          nama_turnamen={"dekan cup fmipa unj".toUpperCase()}
-          penyelenggara={"fmipa".toUpperCase()}
-          status={"TUTUP".toUpperCase()}
-          nama_gor={'gor spirit'.toUpperCase()}
-          kota={'jakarta timur'.toUpperCase()}
-/>
-
-warna: 
-    1. #D3E4CD - Background Color
-    2. #00A799 - Color Box
-    3. #F2DDC1 - Text in Box
-    4. #FF426D - Text in Box
-*/
 
 const ListTurnamen = ({ navigation }) => {
     const [state, setState] = useState(null);
@@ -89,7 +73,8 @@ const ListTurnamen = ({ navigation }) => {
                                     cp2={item.cp2.toUpperCase()}
                                     tim={item.tim}
                                     sosmed={item.sosmed.toUpperCase()}
-                                    // image_url={item.image_url}
+                                    posted_by={item.posted_by}
+                                    posted_at={item.posted_at}
                                     navigation={navigation}
                                 />
                             </View>
