@@ -1,0 +1,71 @@
+
+
+Assalamualaikum warahmatullahi wabarakatuh Waalaikumsalam warah perkenalkan saya Resa Fajar Sukma saya merupakan pengembang dari aplikasi badmintvent kebetulan ini untuk tugas kuliah saya terima kasih untuk Ardani telah bersedia menjadi relawan untuk mereview aplikasi saya sebelumnya saya mau nanya nih sama ardani ardani main bulutangkis kan iya ardani pernah nyari lomba lomba bulutangkis ga
+
+pernah sekali pernah ya menang ga tuh Dan Ya menang ga ngga ngga menang dan, ardani pernah menyelenggarakan lomba bulutangkis kan Iya pernah dekan cup 2021 salah satunya nah di sini nanti saya akan minta masukkan dari ardani tentang aplikasi saya karena ardani lebih berpengalaman nanti silahkan kasih saya masukkan tentang, tentang apa-apa saja yang kurang di dalam aplikasinya oke oke jadi pertama nama aplikasinya itu adalah badminvent diejanya
+
+b a d m i n t v e n t, badmintvent ini adalah aplikasi untuk mempublish lomba bulutangkis kalau ardani punya perlombaan lagi bisa nih dipublish disini terus juga kalau ardani lagi gabut terus pengen nyari lomba-lomba bulutangkis bisa nih nyari di sini kalau misalkan ada orang lain yang ngeposting perlombaannya di sini gitu apa sih manfaat dari ngeposting disini jadi kalau ardani udah posting disini tuh nanti lombanya Ardani bakalan dimunculin dinotifikasi setiap orang yang udah install aplikasi ini di HP Androidnya bakalan muncul tentang perlombaan Ardani nah fitur-fitur yang ada di aplikasi ini itu nanti ardani bisa ngeliat lomba yang diadain sama orang lain kalau dia udah ngeposting terus user dapat menggunakan filter ini enggak saya aplikasiin soalnya karena terkendala sama tampilan jadi saya nggak tahu nampilinnya kayak gimana Terus juga sebelum ardani pengen ngepublish lombanya Ardani, Ardani diharuskan dulu untuk login jadi nanti bertanggung jawab atas setiap postingannya Nah nanti baru deh user dapat mempublish event yang ingin diselenggarakan. Nah di sini ada contoh dari mockups nah ini mockupsnya tapi nanti di aplikasinya ada perbedaan dari ini nih rancangan awalnya tapi nanti di aplikasinya Ada yang beda ada empat halaman kurang lebih halaman ini membuat event, halaman detail event, login logout, dan halaman home index. Oh ya apakah Ardani bersedia untuk share screen di androidnya untuk melakukan instalasi dan melakukan review aplikasi Oh ya boleh boleh Oke saya akan izinkan Ardani untuk share screen.
+
+Terima kasih Ardani karena telah bersedia untuk share screen Jadi sekarang bisa ke menu share search cari
+
+b a d m i n v e n t nah enter, nah itu badmintvent by defaultcorp install dulu.
+
+nah sudah selesai di-install sekarang silahkan Ardani buka aplikasinya
+
+Nah menurut Ardani tadi gimana mengenai Splash Screennya Apakah ada kekurangan udah cukup bagus sih terus kalau untuk halaman tampilan depan kalau tidak ada data gini menurut Ardani bagaimana
+
+ini kalau orang awam nggak ngerti sih maksudnya apaan nggak ngerti ya jadi harusnya gimana
+
+saya juga ngga ngerti ini maksudnya apaan Nah ini kan belum ada data nih ya, belum ada data yang masukkin jadi saya kosongin databasenya Jadi tidak ada data yang ditemukan apa kayak jadi ini kayak tampilan kalau enggak ada data yang ditemukan gitu loh oh iya iya berarti apa ada masukkan supaya tampilannya beda atau bagaimana, mungkin bisa ditampilin event yang udah lewat event yang udah lewat, oke.
+
+tapi dari halaman event ini kaya kecacatan atau kaya kurang spasi atau gimana gitu oh iya di halaman event ini bisa ada fitur refresh Jadi kalau nanti kalau ada notifikasi ada perlombaan baru tapi lombanya belom muncul nah itu bisa direfresh supaya nanti lombanya muncul. keren-keren paling sama ini sih icon sama tulisan datanya agak dijauhin kalau buat tampilan, agak dijauhin ya, oke terima kasih sarannya Terus sekarang kita bisa ke menu option, option, ini menu untuk login sebenernya ini untuk ngebuat event tapi kalau belum login harus login dulu, silahkan login, bisa login
+
+nah ini Ardani sudah berhasil login setelah berhasil login maka akan ada dua option kan tadi cuma satu tuh, nah sekarang ada dua
+
+ada log out atau keluar dan juga bisa buat event
+
+sekarang Ardani bisa komentarin ada gak sih yang kek kurang atau gimana di ditampilan yang sekarang
+
+yang ini paling tombol buat event yang di atas sih tombol bagian keluarnya dibawahnya iya betul. Oke Oke masukkannya baik sekarang bisa ke alamat halaman buat eventnya
+
+Ah ini nyalain mode gelap gak, ya ya, tadi juga ada yang bermasalah sih, ini kekya bug-bug yang kelepas gitu bisa diback dulu diback terus dibuka ulang
+
+nah ini kan ada kumpulan data yang dibutuhkan ya nama event, penyelenggara, gor, kota gor, jadwal pertandingan nah disini ada yang kekurangan ga dan.
+
+nama event, penyelenggara event, nama gor, kota gor
+
+enggak sih harusnya, mungkin biaya pendaftaran kali ya biaya pendaftaran ya, iya dicantumin kalau gratis-gratis kalau ada biayanya dicantumin berapa harganya berarti emang biaya pendaftaran harus ada ya, terus sama ini kali ya tampilan. Coba sekarang Ardani bisa memberi masukkan tampilan-tampilan buat poster. Oh ya buat poster juga bisa, nah sekarang bisa, Ardani bisa coba untuk membuat event jadi nanti ketahuan ngebuat event ini ternyata kolomnya mudah atau ngga.
+
+
+
+oh ini placeholdernya ngga apa, ngga full ya?
+
+Sebenarnya itu ada lanjutannya lagi dan itu kan tangga awal bukanya terus spase strip spasi tanggal-bulan-tahun lagi eventnya berakhir ini tuh tadi udah betul cuman ada tambahannya lagi, ini kayaknya placeholdernya kurang.
+
+terus spasi terus strip atau dash nah terus spasi lagi tanggal akhirnya kapan aku tanggal berakhirnya kapan. Oh ya.
+
+Berarti ini bug juga ya placeholdernya kepanjangan.
+
+nah untuk link sosmed ini sifatnya terserah bebas bisa diisi bisa nggak.
+
+nah data berhasil tambahkan saat ada data berhasil ditambahkan itu sebenarnya data juga sudah berhasil dimunculkan sebagai notifikasi di semua HP Android yang sudah terinstall aplikasi ini, gitu. Jadi nanti jadi lombanya udah ada di semuanya terus sudah ada notifikasi. Oh ya ya. bisa diklik oke. oke. Terus ke home kan datanya nggak ada nih tadi bisa digunain menu yang, eh apa. Fitur yang tadi fitur refresh nah kalau dari sini ada masukan ga dan kayak dari tampilannya gimana gitu
+
+udah, udah oke sih
+
+iya udah cukup bagus, paling informasi ini aja nih yang isinya. nah ini, oh ya oh ini bisa detail ya. bisa diklik nanti masuk ke detail bisa silakan diklik Ardani.
+
+Nah kalau dari ini gimana Dan dari segi penyampaian informasinya.
+
+Ada masukkan ga. Oh ini emailnya nggak usah ditampilin kayaknya deh. Tapi kalau enggak ditampilin terus nggak tahu siapa yang ngeposting. kenapa, Kenapa Harus ngga ditampilkin?
+
+Karena informasinya enggak berkaitan dengan email yang dimasukkan gitu. Jadi kayak hanya cukup contact person nya saja. oh hanya cukup contact personnya saja. Kecuali kalau di form buat event tadi dimasukkan email juga baru boleh dicantumkan. Oke tapi untuk validasi siapa yang membuatnya nanti gimana Dan. Kan bisa aja kalau orang iseng gitu terus enggak ada, kalau nggak ada yang namanya ditampilin mereka bisa aja nanti buat asal-asalan ke situ, ada saran ga Dan.
+
+Apa sebaiknya emailnya ada tapi disimpan hanya di database.
+
+Jadi nanti saat ada data yang ngaco tinggal dicari siapa yang ngeposting, Oke. Terima kasih untuk masukannya untuk yang itu terus selain yang itu dari tampilan gimana Dan, kek ada yang aneh enggak. ini sosial media tiba-tiba huruf kapital semuanya. Iya jadi,  saat diambil dari database terus saat diolahnya nanti dia diubah menjadi kapital, apa sebaiknya diubah. iya kayaknya diubah menyesuaikan yang aslinya aja deh, menyesuaikannya aslinya aja ya. iya. oke.
+
+Terus sama Ardani, kalo orang umum kayaknya enggak tahu deh Ardani ini apaan. itu tadi itu yang bagian penyelenggara sebenarnya. iya penyelenggara. harusnya bisa dijelasin aja penyelenggara ardani. Oh oke berarti ditambahin penyelenggara ardani gitu ya. Iya. oke dan.
+
+Berarti ada ini ga dan, apa ada masukkan untuk aplikasi ini ga untuk kedepannya kayak gimana.
+
+masih banyak yang tadi tadi itu aja kayaknya sih. HTM, yang email. kalau kalau bisa sih yang dicantumin tuh email resmi untuk pertandingannya ya jangan email pribadi dari pembuat event. Oh iya paham. jadi sama kayak contact person tapi versi email ya. nah iya betul. oke. karena kalau email pribadi takutnya disalahgunakan. iya gitu. oh ya. oke. sama mungkin bisa juga, oh ini kita daftarnya langsung hubungin contact personnya. ya ke contact person nya untuk saat ini masih ini. kayak gitu. ya Ya, udah paling itu aja sih sisanya udah bagus. Oke terima kasih Ardani sudah meluangkan waktu untuk mereview aplikasi badmintvent ini. Semoga diberi kesehatan terus ya. aaminn. Terus buat badmintvent juga sukses terus kedepannya. aaminn, semoga aja kedepannya ada yang make ya. amin. Terima kasih dan untuk waktunya. Assalamualaikum warahmatullahi wabarakatuh. Waalaikumsalam.

@@ -1,0 +1,63 @@
+
+
+Assalamualaikum warahmatullahi wabarakatuh, Waalaikumsalam warahmatullahi wabarakatuh, pertama perkenalkan nama saya Resa Fajar Sukma pembuat aplikasi yang bernama Badmintvent. Terima kasih untuk Cindi telah bersedia menjadi user untuk aplikasi ini. Sebelumnya ingin bertanya apakah Cindi merupakan pemain bulutangkis.
+
+Iya main-main bulutangkis, Cindi pernah ikut perlombaan bulutangkis ga? Kebetulan baru kemarin ikut lomba di dekan Cup. Wih, mantep pernah menang ga Cin lomba bulutangkis? kalau kemarin nggak menang tapi pas tahun awal tahun menang dong. Mantep-mantep. Jadi Cin Badmintvent ini sebuah aplikasi untuk mempublish lomba bulutangkis atau untuk mencari lomba bulutangkis. Nah kalau Cindi punya acara perlombaan bulutangkis. Nah Cindi bisa nih apa, ngepromosiin acaranya di sini, nah nanti Cindi itu sebagai penyelenggara perlombaan bulutangkis kalau gitu. Nah kalau Cindi lagi gabut dan mau cari lomba bulutangkis di sini bisa dicari kalau ada orang yang promosiin perlombaannya di sini paham Cin? ya oke. Nah nanti kalau Cindi jadi penyelenggara itu misalkan Cindi udah isi formulirnya nih tentang perlombaan kan, nah nanti lombanya Cindi tuh ditampilin di semua HP orang-orang yang udah download aplikasi ini. Mantep ga Cin? Boleh-boleh. Nah disini, disini bisa diliat nih fiturnya nih Cindi itu bisa melihat lomba-lomba yang diadakan, nah untuk yang ini saya tidak implementasikan karena terkendala di mockup kurang bagus, jadi saya nggak tahu harus digimanain terus saya hilangin, nah terus Cindi tuh sebelum ngepublish atau ngasih tahu event-eventnya tentang lomba Cindi tuh, pertama harus login dulu supaya nanti bisa dikenalin sama sistem siapa sih yang posting ini. Ngertikan?
+
+Terus baru deh kalau udah login bisa publish event. Nah di sini ada contoh mockup nih contoh dari halaman aplikasinya ada berapa halaman sih 1 2 3 4 5 tapi login sama logout itu dihitung satu ya jadi kurang lebih ada empat. Halaman home, login untuk login, terus ini detail dari perlombaannya dan ini halaman untuk membuat event. Oh ya, sekarang mungkin kita ke Cindi untuk download aplikasi badmintvent, apa Cindi bersedia untuk share screen di HP Cindi? bersedia. Tapi sebelumnya udah download. Sebelumnya udah download? Oh yaudah, nanti tetep aja kita langkah perlangkah ya dari yang Google Play Store-nya, Oke. Ini masih dinonaktifin nih share screennya. Terima kasih Cindi udah mau share screen. Nah sekarang bisa ke menu search.
+
+Nah itu kayaknya Cindi udah install ya, ke BadmintVent, nah iya yang itu logonya. Nah iya buka, buka ya? Ya jangan uninstall, diuninstall ntar ilang aplikasinya. Nah tadi Cin, mengenai Splash Screennya.
+
+Oh tadi, gimana menurut Cindi? Simpel atau bagaimana?
+
+Simpel sih enggak enggak banyak macam-macam dan biasanya ada tuh aplikasi yang Splash Screennya terlalu banyak ada intro intro yang lainnya, ini udah cukup sih. Berarti kalau kayak gitu, cukup lah ya. Pertama perkenalan dulu disini tuh halaman home dimana nanti Cindi bisa melihat lomba-lomba yang udah diposting sama orang lain. Jadi nanti bisa dilihat seperti ini. Disini juga ada fitur untuk refresh coba Cindi coba untuk refresh. Nah untuk apa sih tujuannya refresh, refresh itu tujuannya kalau ada notifikasi masuk tapi perlombaan nya belum terupdate maka dilakukan refresh supaya si lomba yang tadi tuh muncul, nah menurut Cindi gimana tampilannya saat nggak ada data sama sekali. Nggak papa, nggak aneh-aneh, emang masih kosong datanya. mungkin lebih baik ada animasi gitu kali ya kayak biasanyakan kalau ada halaman kosong oops tidak ditemukan kayak aplikasi ada animasinya gitu loh. Oh oops data tidak ditemukan gitu ya? Iya kayak lebih UX-nya diperbagus.
+
+Terima kasih atas masukkannya Cin, sekarang masuk ke menu options dulu Cin.
+
+Kayaknya Cindi udah, udah login ya? Ya udah nyoba-nyoba tadi udah nyoba-nyoba ya. Coba sekarang untuk demonya untuk nyobain coba Cindi, keluar dulu logout. Udah nih, udah ya.
+
+Nah ini halaman awal loginnya biasa lah ya kayak biasa-biasa aja. Sekarang coba login apakah berhasil dengan menggunakan login Google?
+
+Pilih dulu juga?
+
+Oh ya, ini tadi login pake akun yang mana ya? Yang Cindi, Cindi Tri Fitikasari ya? Nah berarti untuk fitur login, untuk fitur login gimana sih Cin? Memudahkan ngga sih untuk penggunaan login dengan Google ini. Sebenarnya memudahkan kayak siapa aja bisa login dan bisa buat event gitu ya.
+
+Cuman ya biasanya kalau ada akun bisa daftar sih jadi lebih baik ada daftarnya tapi untuk, untuk ini enggak papa juga sih enggak menyulitkan juga. Berarti kayak gini juga nggak papa ya. Iya gak papa. Soalnya saya mikir kalau ada registrasi itu nanti kayak, usernya kayak apa sih masa udah zaman sekarang masih ada regis-regis kelamaan gitu loh. Iya benar bisa juga. Nah sekarang Cindi boleh coba untuk ngebuat events. Buat event.
+
+Emang putih gini ya, oh harusnya ngga sih Cin placeholdernya harusnya sih warna agak gelap gitu. Kenapa ya mungkin ada fitur di HP Cindi yang Cindi aktifin? Mode? Pakai, iya pakai mode gelap sih lagi pakai mode gelap ngaruh ya berarti coba.
+
+Oh iya, berarti emang itu, bug itu ya berarti ya, untuk mode gelap mode terang gitu.
+
+Iya. Oke, mungkin ke depannya bakal lebih diperhatiin lagi untuk kesalahan-kesalahan itu. Oke. Nah, menurut Cindi di tampilan buat turnamen ini gimana Cin ada yang aneh? Ini tinggal langsung klik aja kan? Iya, tinggal di input-input.
+
+Cindi boleh coba kalau ingin coba. Coba dulu kali ya? Tapi, mending diteliti dulu Cin. Kalau menurut Cindi dari sini ada data yang kurang ga sih? Kan turnamen kan biasanya ada nama eventnya, penyelenggaranya siapa, dilaksanakan di gor mana, di kota mana, jadwal pertandingan, jumlah tim, sama contact person kan? Itu yang kemarin kepikiran sama saya sih. Ada masukan ga Cin untuk formulir ini.
+
+Biasanya ada nunjukkin ini enggak sih hadiah gitu, hadiahnya apa, terus pendaftarannya berapa juga, biasanyakan ditunjukin juga terus juga ada poster tuh waktu itu saya lihat di GOR ada kalau ada perlombaan pasti ada posternya mungkin bisa masukin atau nambahin field buat taruh gambar gitu. Oh jadi enggak pakai. Oh ya jadi field gambar uang pendaftaran sama hadiahnya ya. Iya kayak gitu yang saya pernah lihat di GOR. Oh berarti ini ada kekurangan untuk, berarti datanya kurang komplit lah ya. Tapi Insya Allah. Ya. Yang pas di link sosmednya tuh jadi nanti mereka atau di kontak person yang ngasih tau sendiri untuk saat ini masih butuh bantuan. Nah coba Cin bisa silahkan coba membuat eventnya.
+
+Langsung aja ya.
+
+Eh apa turnamen. Terserah suka-suka ini kan nyoba, namanya juga nyoba.
+
+Penyelenggara.
+
+Eh Cin untuk, untuk nama GORnya itu ngga usah pakai GOR lagi depannya Cin itu kayak udah, ngikutin benar-benar contoh aja. Iya soalnya nanti kalau ditambahin GOR lagi kayak GOR GOR gitu. Oh jadi, cuman GOR namanya aja. Iya.
+
+Untuk input input tanggalnya juga sama Cin itu ada-ada contohnya oh berarti ngebingungin ya, placeholder ya kalau yang nggak baca ya. Iya, biasanyakan orang langsung aja ya berarti harus ngikutin yang ada di sini banget ya. Iya itu udah formatnya. Ada saran ga Cin supaya, ga gitu Cin?
+
+Kalau tanggal sih mendingan, kan kalau kita input Google form itu kan, ada pilihan date ya tanggal jadi beneran nge-select atau memilih datanya dari. Oh select date gitu ya pake tanggal. Oh iya. Oke, deh kalau begitu. Terus, lebih baik tuh ada labelnya lagi itu kayak ini buat ngisi gitu. Oh label untuk setiap kolomnya itu kolom apa gitu ya. Ya soalnya kan pas sudah diisi lupa tuh ya ini sering ngisi apa ya. Oh ya benar sih bisa kayak gitu ya. Oke cin. Ini kosong delapan (08) ya bukan dua (02). Heeh, gapapa kok pakai data dummy pakai nomor asal. Ini harus diisi dua-duanya? Harus Cin soalnya kalau satu takutnya nanti dia nggak bisa dikontak jadi minimal 2. Misalnya ada yang ngisi kosong gimana? kalau misalkan ada yang ngisi kosong tuh nanti ada Alert. Cobain aja cobain kalau kosong coba terus tambahkan event, ngga akan bisa. Oh iya, jadi harus dua-duanya ya.
+
+Nah kalau untuk link sosmed boleh kosong soalnya itu optional. Karena disitu udah ada contact person yang bisa dihubungin. Oke oke. Untuk link sosmed itu ada contohnya juga tuh.
+
+Udah gini aja ya. Boleh. Tinggal tambahkan event.
+
+Oh udah, nah Cindi punya, tournaments Cindi udah masuk nih di aplikasi yang lain udah ada notificationnya. Oh ada notifikasi, di sana. Udah-udah ada.
+
+Okein aja nih, oke-okein aja. Sekarang ke halaman home seharusnya data Cindi udah ada, wah belum ada Cin, bisa direfresh dulu. Pakai yang tadi ya. Oh iya, turnamen pkp oh iya. Untuk halaman depan tampilan depannya tadi menurut Cindi gimana? ada yang kurang ngga? Kayak ada yang aneh ngga Cin?
+
+Mungkin spasi antara tulisannya digedein lagi sisinya. Spasi yang gimana tuh. Yang di atas, yang Kelapa Dua itu kan mepet banget sama gambarnya. Oh itu dikasih padding gitu ya maksudnya ya? Heeh, dikasih jarak.
+
+Oke Cin terus kalo di halaman detailnya Cin? Diklik bisa ke halaman detail.
+
+Untuk di halaman detail ini berarti tadi kurang ini ya apa uang hadiah, atau hadiahnya dapet apa aja, sama uang pendaftarannya ya. Heeh, benar sama poster penting banget sih kalau kata saya mah. Sama poster ya. Jadi bisa lengkapin info-info yang tadi diisikan kalau poster. Oke, terus kalau dari tampilan penampilan datanya gimana Cin? Ya, mungkin sama kayak tadi ya jaraknya agak kecilan gitu jadi kayak mepet antara satu dengan yang lainnya. Berarti emang jarak antar data ya, gapnya ya? Ya betul. Ada yang mau Cindi sampaiin enggak tentang aplikasi masukkannya atau gimana atau mungkin sebenarnya tuh Cindi ngarepin ada fitur sesuatu di aplikasi ini. Sebenernya fiturnya nyari itu, lapangan yang kosong, bukan hanya lomba jadi ya jadi diaplikasikan bukan cuma pilih lombanya aja tapi apa namanya nambahin fitur saya bisa nyari lapangan yang kosong gitu karena setiap nyari lapangan kek harus message tiap yang punya lapangan kan jadinya susah gitu tetapi coba ada aplikasi kayak gini kan jadi lebih gampang gitu. Oh, aplikasi booking lapangan ya. Iya betul. Itu bisa-bisa kedepannya bisa tapi mungkin bukan diaplikasi ini karena aplikasi ini khusus untuk event-event. Siap oke.
+
+Ada lagi ngga Cin. Udah sih kayaknya itu aja. Oh. Nanti mungkin dari masukkan dengan berjalannya waktu bisa lebih bagus lagi. Aaminn. Oh iya, terima kasih ya Cindi atas waktunya sudah mau jadi user yang mencoba. Makasih untuk masukkannya sama semoga sehat terus ya. Ya aaminn. Makasih Cin. Iya sama-sama.
