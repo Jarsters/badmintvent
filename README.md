@@ -33,4 +33,5 @@ https://play.google.com/store/apps/details?id=com.olahraga.badmintvent
 - Review Aplikasi Badminton 1 (Cindi Tri Fitikasari) - https://www.youtube.com/watch?v=O_zdNZXhqYQ
 - Review Aplikasi Badminton 2 (Muhammad Ardani) - https://www.youtube.com/watch?v=xRzoa1yF1hs
 - Review Aplikasi Badminton 3 (Andri Rahmanto) - https://www.youtube.com/watch?v=dNUT7c8SKAM
+
 Catatan: Subtitle dari setiap user testing dapat di download, pada repo ini.
